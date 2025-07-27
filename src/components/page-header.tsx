@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import React from "react";
 
 interface PageHeaderProps {
   title: string;
   description: string;
 }
 
-export function PageHeader({ title, description }: PageHeaderProps) {
+const PageHeaderComponent = ({ title, description }: PageHeaderProps) => {
   return (
     <div className="text-center">
       <motion.h1
@@ -28,4 +29,6 @@ export function PageHeader({ title, description }: PageHeaderProps) {
       </motion.p>
     </div>
   );
-}
+};
+
+export const PageHeader = React.memo(PageHeaderComponent);
